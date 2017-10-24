@@ -1,0 +1,62 @@
+module Players.List exposing (..)
+
+import Html exposing (..)
+import Html.Attributes exposing (class)
+import Msgs exposing (Msg)
+import Models exposing (Player)
+
+
+
+-- LIST VIEW
+
+
+view : List Player -> Html Msg
+view players =
+    <div>
+      {nav}
+      {list players}
+    </div>
+
+
+nav : Html Msg
+nav =
+    <div class="clearfix mb2 white bg-black">
+      <div class="left p2">Players</div>
+    </div>
+
+
+list : List Player -> Html Msg
+list players =
+    let
+        tableData =
+            players |> List.map playerRow
+    in
+        <div class="p2">
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Level</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {:tableData}
+            </tbody>
+          </table>
+        </div>
+
+
+playerRow : Player -> Html Msg
+playerRow player =
+    let
+        playerLevel =
+            player.level |> toString
+    in
+        <tr>
+          <td>{text player.id}</td>
+          <td>{text player.name}</td>
+          <td>{text playerLevel}</td>
+          <td></td>
+        </tr>
