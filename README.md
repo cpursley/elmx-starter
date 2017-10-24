@@ -35,6 +35,7 @@ The build task compiles the `.elmx` files in the `src` directory via the elmx pa
 Todo
 ------------
 
+- Prettier Elm error logging
 - Switch to webpack?
 - Use [closure-compiler](https://github.com/google/closure-compiler-npm) for production builds
 - Better organize index.html, app.js, and app.css (i.e., `dist` directory)

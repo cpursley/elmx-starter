@@ -1,4 +1,8 @@
 {
+  "name": "elmx-starter",
+  "version": "1.0.0",
+  "description": "A starter boilerplate for Elm with elmx",
+  "repository": "https://github.com/cpursley/elmx-starter.git",
   "devDependencies": {
     "elm": "^0.18.0",
     "elm-live": "^2.7.5",

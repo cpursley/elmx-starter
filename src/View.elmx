@@ -12,7 +12,6 @@ import Players.List
 view : Model -> Html Msg
 view model =
     <div>
-      <h1>This is a title</h1>
       {page model}
     </div>
 

@@ -12,8 +12,7 @@ import Players.List
 view : Model -> Html Msg
 view model =
     Html.node "div" [] [
-      Html.node "h1" [] [Html.text "This is a title"]
-      , page model
+      page model
     ]
 
 
