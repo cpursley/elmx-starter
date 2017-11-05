@@ -17,7 +17,8 @@
   },
   "scripts": {
     "api": "node api.js",
-    "start": "nf start"
+    "watch": "nf start",
+    "elm": "elm-live src/Main.elm --output=app.js --open"
   },
   "license": "MIT"
 }
