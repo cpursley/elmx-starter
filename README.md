@@ -44,8 +44,8 @@ Tools
 
 #### Elmx syntax highlighting, autocomplete and linter
 
-- (Atom)[https://atom.io/packages/language-elmx]
-- (Visual Studio Code)[https://marketplace.visualstudio.com/items?itemName=realazy.elmx]
+- [Atom](https://atom.io/packages/language-elmx)
+- [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=realazy.elmx)
 
 
 Todo
