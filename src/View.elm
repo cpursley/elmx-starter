@@ -11,7 +11,7 @@ import Players.List
 
 view : Model -> Html Msg
 view model =
-    Html.node "div" [] [
+    Html.div [] [
       page model
     ]
 
