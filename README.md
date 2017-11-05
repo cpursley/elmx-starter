@@ -51,7 +51,7 @@ Tools
 Todo
 ------------
 
-- Better formatted Elm error logging when using Profile
+- Better formatted Elm error logging when using Procfile
 - Switch to [Webpack](https://github.com/pzavolinsky/elmx#webpack-integration)?
 - Use [closure-compiler](https://github.com/google/closure-compiler-npm) for production builds
 - Better organize index.html, app.js, and app.css (i.e., `dist` directory)

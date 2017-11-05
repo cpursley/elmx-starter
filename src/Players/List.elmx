@@ -4,18 +4,22 @@ import Html exposing (..)
 import Html.Attributes exposing (class)
 import Msgs exposing (Msg)
 import Models exposing (Player)
-
+import RemoteData exposing (WebData)
 
 
 -- LIST VIEW
 
 
-view : List Player -> Html Msg
-view players =
-    <div>
-      {nav}
-      {list players}
-    </div>
+view : WebData (List Player) -> Html Msg
+view response =
+    let
+        listView =
+            maybeList response
+    in
+        <div>
+          {nav}
+          {listView}
+        </div>
 
 
 nav : Html Msg
@@ -23,6 +27,26 @@ nav =
     <div class="clearfix mb2 white bg-black">
       <div class="left p2">Players</div>
     </div>
+
+
+maybeList : WebData (List Player) -> Html Msg
+maybeList response =
+    case response of
+        RemoteData.NotAsked ->
+            <span></span>
+
+        RemoteData.Loading ->
+            <span>Loading...</span>
+
+        RemoteData.Success players ->
+            list players
+
+        RemoteData.Failure error ->
+            let
+                errorMessage =
+                    error |> toString
+            in
+                <span>{=(toString error)}</span>
 
 
 list : List Player -> Html Msg
@@ -55,8 +79,8 @@ playerRow player =
             player.level |> toString
     in
         <tr>
-          <td>{text player.id}</td>
-          <td>{text player.name}</td>
-          <td>{text playerLevel}</td>
+          <td>{=player.id}</td>
+          <td>{=player.name}</td>
+          <td>{=playerLevel}</td>
           <td></td>
         </tr>

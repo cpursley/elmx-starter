@@ -4,18 +4,22 @@ import Html exposing (..)
 import Html.Attributes exposing (class)
 import Msgs exposing (Msg)
 import Models exposing (Player)
-
+import RemoteData exposing (WebData)
 
 
 -- LIST VIEW
 
 
-view : List Player -> Html Msg
-view players =
-    Html.div [] [
-      nav
-      , list players
-    ]
+view : WebData (List Player) -> Html Msg
+view response =
+    let
+        listView =
+            maybeList response
+    in
+        Html.div [] [
+          nav
+          , listView
+        ]
 
 
 nav : Html Msg
@@ -23,6 +27,26 @@ nav =
     Html.div [Html.Attributes.attribute "class" "clearfix mb2 white bg-black"] [
       Html.div [Html.Attributes.attribute "class" "left p2"] [Html.text "Players"]
     ]
+
+
+maybeList : WebData (List Player) -> Html Msg
+maybeList response =
+    case response of
+        RemoteData.NotAsked ->
+            Html.span [] []
+
+        RemoteData.Loading ->
+            Html.span [] [Html.text "Loading..."]
+
+        RemoteData.Success players ->
+            list players
+
+        RemoteData.Failure error ->
+            let
+                errorMessage =
+                    error |> toString
+            in
+                Html.span [] [Html.text (toString error)]
 
 
 list : List Player -> Html Msg
@@ -55,8 +79,8 @@ playerRow player =
             player.level |> toString
     in
         Html.tr [] [
-          Html.td [] [text player.id]
-          , Html.td [] [text player.name]
-          , Html.td [] [text playerLevel]
+          Html.td [] [Html.text player.id]
+          , Html.td [] [Html.text player.name]
+          , Html.td [] [Html.text playerLevel]
           , Html.td [] []
         ]
