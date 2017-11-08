@@ -9403,15 +9403,13 @@ var _cpursley$elmx_starter$Players_List$maybeList = function (response) {
 		case 'Success':
 			return _cpursley$elmx_starter$Players_List$list(_p0._0);
 		default:
-			var _p1 = _p0._0;
-			var errorMessage = _elm_lang$core$Basics$toString(_p1);
+			var errorMessage = _elm_lang$core$Basics$toString(_p0._0);
 			return A2(
 				_elm_lang$html$Html$span,
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text(
-						_elm_lang$core$Basics$toString(_p1)),
+					_0: _elm_lang$html$Html$text(errorMessage),
 					_1: {ctor: '[]'}
 				});
 	}

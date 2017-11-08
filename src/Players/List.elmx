@@ -46,7 +46,7 @@ maybeList response =
                 errorMessage =
                     error |> toString
             in
-                <span>{=(toString error)}</span>
+                <span>{=errorMessage}</span>
 
 
 list : List Player -> Html Msg

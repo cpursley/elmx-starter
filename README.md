@@ -1,7 +1,7 @@
 Elmx Starter
 =======================
 
-This is a starter app based on [Chapter 5 - Resources](https://www.elm-tutorial.org/en/05-resources/cover.html) of [Elm Tutorial](https://www.elm-tutorial.org/en/). The main difference is, it uses [elmx](https://github.com/pzavolinsky/elmx), a precompiler that takes an Elm program with embedded HTML and desugars the HTML into elm-html syntax.
+This is a starter app based on [Chapter 7 - Resources](https://www.elm-tutorial.org/en/07-routing/cover.html) of [Elm Tutorial](https://www.elm-tutorial.org/en/). The main difference is, it uses [elmx](https://github.com/pzavolinsky/elmx), a precompiler that takes an Elm program with embedded HTML and desugars the HTML into elm-html syntax.
 
 > Elmx is to Elm what React's JSX is to Javascript
 
@@ -24,7 +24,7 @@ Workflow
 
 In a terminal, run: `yarn watch`
 
-This runs the [Procfile](/Procfile), which starts a [json-server](https://github.com/typicode/json-server) (a mock REST API for fast protoyping), [gulp](/gulpfile.js) (a build tool) for watching and converting `.elmx` to `.elm` files.
+This runs the [Procfile](/Procfile), which starts a [json-server](https://github.com/typicode/json-server) (a mock REST API for fast prototyping) and [gulp](/gulpfile.js) (a build tool) for watching and converting `.elmx` to `.elm` files.
 
 In another terminal run: `yarn elm`
 
@@ -53,5 +53,5 @@ Todo
 
 - Better formatted Elm error logging when using Procfile
 - Switch to [Webpack](https://github.com/pzavolinsky/elmx#webpack-integration)?
-- Use [closure-compiler](https://github.com/google/closure-compiler-npm) for production builds
-- Better organize index.html, app.js, and app.css (i.e., `dist` directory)
+- Better organize index.html, app.js, and app.css
+- Set up a `dist` directory
