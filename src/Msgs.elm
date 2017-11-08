@@ -1,7 +1,8 @@
 module Msgs exposing (..)
 
-import Models exposing (Player)
+import Navigation exposing (Location)
 import RemoteData exposing (WebData)
+import Models exposing (Player)
 
 
 -- MESSAGES
@@ -9,3 +10,4 @@ import RemoteData exposing (WebData)
 
 type Msg
     = OnFetchPlayers (WebData (List Player))
+    | OnLocationChange Location

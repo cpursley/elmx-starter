@@ -2,9 +2,9 @@ module Players.List exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (class)
+import RemoteData exposing (WebData)
 import Msgs exposing (Msg)
 import Models exposing (Player)
-import RemoteData exposing (WebData)
 
 
 -- LIST VIEW
@@ -42,11 +42,7 @@ maybeList response =
             list players
 
         RemoteData.Failure error ->
-            let
-                errorMessage =
-                    error |> toString
-            in
-                Html.span [] [Html.text errorMessage]
+            Html.span [] [Html.text (error |> toString)]
 
 
 list : List Player -> Html Msg
@@ -74,13 +70,9 @@ list players =
 
 playerRow : Player -> Html Msg
 playerRow player =
-    let
-        playerLevel =
-            player.level |> toString
-    in
-        Html.tr [] [
-          Html.td [] [Html.text player.id]
-          , Html.td [] [Html.text player.name]
-          , Html.td [] [Html.text playerLevel]
-          , Html.td [] []
-        ]
+    Html.tr [] [
+      Html.td [] [Html.text player.id]
+      , Html.td [] [Html.text player.name]
+      , Html.td [] [Html.text (player.level |> toString)]
+      , Html.td [] []
+    ]

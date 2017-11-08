@@ -1,0 +1,56 @@
+module Players.Edit exposing (..)
+
+import Html exposing (..)
+import Html.Attributes exposing (class, value, href)
+import Msgs exposing (Msg)
+import Models exposing (Player)
+
+
+view : Player -> Html Msg
+view model =
+    <div>
+      {nav model}
+      {form model}
+    </div>
+
+
+nav : Player -> Html Msg
+nav model =
+    <div class="clearfix mb2 white bg-black p1">
+    </div>
+
+
+form : Player -> Html Msg
+form player =
+    <div class="m3">
+      <h1>{=player.name}</h1>
+      {formLevel player}
+    </div>
+
+
+formLevel : Player -> Html Msg
+formLevel player =
+    <div class="clearfix py1">
+      <div class="col col-5">
+        <span>Level</span>
+      </div>
+      <div class="h2 bold">
+        {=(player.level |> toString)}
+        {btnLevelDecrease player}
+        {btnLevelIncrease player}
+      </div>
+    </div>
+
+
+btnLevelDecrease : Player -> Html Msg
+btnLevelDecrease player =
+    <a class="btn ml1 h1">
+      <i class="fa fa-minus-circle"></i>
+    </a>
+
+
+btnLevelIncrease : Player -> Html Msg
+btnLevelIncrease player =
+    <a class="btn ml1 h1">
+      <i class="fa fa-plus-circle"></i>
+    </a>
