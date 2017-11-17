@@ -16,9 +16,13 @@ matchers =
 
 parseLocation : Location -> Route
 parseLocation location =
-    case (parseHash matchers location) of
-        Just route ->
-            route
+    let
+        currentRoute =
+            location |> parseHash matchers
+    in
+        case currentRoute of
+            Just route ->
+                route
 
-        Nothing ->
-            NotFoundRoute
+            Nothing ->
+                NotFoundRoute

@@ -19,6 +19,10 @@ initialModel route =
     }
 
 
+
+-- PLAYER
+
+
 type alias PlayerId =
     String
 
