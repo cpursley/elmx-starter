@@ -14,8 +14,7 @@ Installation
 You'll need to have [Yarn](https://yarnpkg.com/en/docs/install) and [Elm](https://guide.elm-lang.org/install.html) installed. Once that's done, install the build tool and Elm dependencies:
 
 ```shell
-yarn install
-elm-package install -y
+yarn setup
 ```
 
 
