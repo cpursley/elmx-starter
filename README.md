@@ -1,7 +1,7 @@
 Elmx Starter
 =======================
 
-This is a starter app based on [Chapter 7 - Resources](https://www.elm-tutorial.org/en/07-routing/cover.html) of [Elm Tutorial](https://www.elm-tutorial.org/en/). The main difference is, it uses [elmx](https://github.com/pzavolinsky/elmx), a precompiler that takes an Elm program with embedded HTML and desugars the HTML into elm-html syntax.
+This is a starter app based on [Elm Tutorial](https://www.elm-tutorial.org/en/). The main difference is, it uses [elmx](https://github.com/pzavolinsky/elmx), a precompiler that takes an Elm program with embedded HTML and desugars the HTML into elm-html syntax. If you've ever used Handlebars or JSX templating before, elmx should look pretty familiar.
 
 > Elmx is to Elm what React's JSX is to Javascript
 
@@ -17,19 +17,26 @@ You'll need to have [Yarn](https://yarnpkg.com/en/docs/install) and [Elm](https:
 yarn setup
 ```
 
+This runs both `yarn install` and `elm-package install -y`.
 
 Workflow
 ------------
 
-In a terminal, run: `yarn watch`
+In a terminal, run:
+
+```shell
+yarn watch
+```
 
 This runs the [Procfile](/Procfile), which starts a [json-server](https://github.com/typicode/json-server) (a mock REST API for fast prototyping) and [gulp](/gulpfile.js) (a build tool) for watching and converting `.elmx` to `.elm` files.
 
-In another terminal run: `yarn elm`
+In another terminal run:
 
-This starts [elm-live](https://github.com/tomekwi/elm-live), an Elm development server with live reload out of the box. A browser window will automatically open to: [http://localhost:8000](http://localhost:8000). Elm error messages will be displayed in the terminal.
+```shell
+yarn elm
+```
 
-Alternatively, if you'd prefer to view the Elm error messages in the browser, you can run `elm-reactor` and visit the application at: http://localhost:8000/src/Main.elm
+This starts [elm-live](https://github.com/tomekwi/elm-live), an Elm development server with live reload out of the box. A browser window will automatically open to: [http://localhost:8000](http://localhost:8000). Elm error messages will be displayed in the terminal. Alternatively, if you'd prefer to view the Elm error messages in the browser, instead of `yarn watch`, run `elm-reactor`.
 
 
 Elmx
@@ -50,7 +57,7 @@ Tools
 Todo
 ------------
 
-- Better formatted Elm error logging when using Procfile
-- Switch to [Webpack](https://github.com/pzavolinsky/elmx#webpack-integration)?
-- Better organize index.html, app.js, and app.css
+- Better formatted Elm error logging when using Procfile to run elm-live
+- Switch from Gulp to [Webpack](https://github.com/pzavolinsky/elmx#webpack-integration)
+- Better organization of index.html, app.js, and app.css
 - Set up a `dist` directory
